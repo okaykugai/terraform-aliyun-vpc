@@ -22,9 +22,9 @@ Use below snippet in tf file to create a VPC in Aliyun.
 module "aliyun_vpc" {
   source = "./modules/vpc"
 
-  prefix              = "${terraform.workspace}"
-  availability_zone_a = "${var.global_info["availability_zone_a"]}"
-  availability_zone_b = "${var.global_info["availability_zone_b"]}"
+  prefix              = "myproject_or_environment"  // "${terraform.workspace}"
+  availability_zone_a = "enter_value_of_availability_zone_a"
+  availability_zone_b = "enter_value_of_availability_zone_b"
 }
 ```
 
@@ -54,6 +54,7 @@ module "aliyun_vpc" {
 | prefix | Prefix for each resource created | string | - | yes |
 | vpc_cidr | VPC CIDR range | string | `10.0.0.0/8` | no |
 | vpc_name | VPC name | string | `vpc` | no |
+| vpc_description | VPC description | string | `Alicloud VPC` | no |
 
 ## Outputs
 
@@ -82,4 +83,5 @@ module "aliyun_vpc" {
 | nat_gateway_name | NAT gateway name |
 | vpc_id | VPC id |
 | vpc_name | VPC name |
+| vpc_description | VPC description |
 

@@ -9,6 +9,11 @@ output "vpc_name" {
   description = "VPC name"
 }
 
+output "vpc_description" {
+  value       = "${alicloud_vpc.vpc.description}"
+  description = "VPC description"
+}
+
 // NAT Gateway
 output "nat_gateway_id" {
   value       = "${alicloud_nat_gateway.nat_gateway.id}"
@@ -56,21 +61,6 @@ output "app_vswitch_az_b_cidr_block" {
   description = "APP VSwitch AZ second cidr range"
 }
 
-output "app_vswitch_az_c_id" {
-  value       = "${alicloud_vswitch.app_vswitch_az_c.id}"
-  description = "APP VSwitch AZ third id"
-}
-
-output "app_vswitch_az_c_name" {
-  value       = "${alicloud_vswitch.app_vswitch_az_c.name}"
-  description = "APP VSwitch AZ third name"
-}
-
-output "app_vswitch_az_c_cidr_block" {
-  value       = "${alicloud_vswitch.app_vswitch_az_c.cidr_block}"
-  description = "APP VSwitch AZ third cidr range"
-}
-
 output "app_route_table_id" {
   value       = "${alicloud_route_table.app_route_table.id}"
   description = "APP VSwitch route table id"
@@ -105,21 +95,6 @@ output "db_vswitch_az_b_name" {
 output "db_vswitch_az_b_cidr_block" {
   value       = "${alicloud_vswitch.db_vswitch_az_b.cidr_block}"
   description = "DB VSwitch AZ second cidr range"
-}
-
-output "db_vswitch_az_c_id" {
-  value       = "${alicloud_vswitch.db_vswitch_az_c.id}"
-  description = "DB VSwitch AZ third id"
-}
-
-output "db_vswitch_az_c_name" {
-  value       = "${alicloud_vswitch.db_vswitch_az_c.name}"
-  description = "DB VSwitch AZ third name"
-}
-
-output "db_vswitch_az_c_cidr_block" {
-  value       = "${alicloud_vswitch.db_vswitch_az_c.cidr_block}"
-  description = "DB VSwitch AZ third cidr range"
 }
 
 output "db_route_table_id" {

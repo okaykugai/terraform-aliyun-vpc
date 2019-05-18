@@ -9,22 +9,23 @@ variable "vpc_name" {
   description = "VPC name"
 }
 
+variable "vpc_description" {
+  default     = "Alicloud VPC"
+  description = "VPC description"
+}
+
 variable "vpc_cidr" {
   default     = "10.0.0.0/8"
   description = "VPC CIDR range"
 }
 
-// Hongkong AZ's
+// AZ's
 variable "availability_zone_a" {
   description = "Availibility zone first"
 }
 
 variable "availability_zone_b" {
   description = "Availibility zone second"
-}
-
-variable "availability_zone_c" {
-  description = "Availibility zone third"
 }
 
 // NAT Gateway
@@ -64,16 +65,6 @@ variable "app_vswitch_cidr_az_b" {
   description = "APP VSwitch AZ second cidr range"
 }
 
-variable "app_vswitch_name_az_c" {
-  default     = "app_vswitch_c"
-  description = "APP VSwitch AZ third name"
-}
-
-variable "app_vswitch_cidr_az_c" {
-  default     = "10.0.4.0/23"
-  description = "APP VSwitch AZ third cidr range"
-}
-
 variable "app_route_table_name" {
   default     = "app_route_table"
   description = "APP VSwitch route table name"
@@ -98,16 +89,6 @@ variable "db_vswitch_name_az_b" {
 variable "db_vswitch_cidr_az_b" {
   default     = "10.0.8.0/23"
   description = "DB VSwitch AZ second cidr range"
-}
-
-variable "db_vswitch_name_az_c" {
-  default     = "db_vswitch_c"
-  description = "DB VSwitch AZ third name"
-}
-
-variable "db_vswitch_cidr_az_c" {
-  default     = "10.0.10.0/23"
-  description = "DB VSwitch AZ third cidr range"
 }
 
 variable "db_route_table_name" {
